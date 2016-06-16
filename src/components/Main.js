@@ -16,8 +16,42 @@ imageDatas = function getImageURL(imageDatasArr) {
   }
 }(imageDatas)//只使用一次的函数采用自执行的方式
 
-class AppComponent extends React.Component {
+var ImgFigure = React.creatClass({
+  render:function () {
+    return (
+      <figure>
+        <img src="this,props.data.imageURL" alt="this.props.data.title"/>
+        <figcaption>
+          <h2> {this.props.data.title}</h2>
+        </figcaption>
+      </figure>
+    )
+  }
+});
+var GalleryByReactApp = React.createClass({
+  render:function(){
+    var controllerUnits = [],
+      imgFigures = [];
+    imageDatas.forEach(function (value) {
+      imgFigures.push(<ImgFigure data={value}/>)
+    })
+    return (
+      <section className = "stage">
+        <section className="img-sec">
+          {imgFigures}
+        </section>
+        <nav className="controller-nav">
+          {controllerUnits}
+        </nav>
+      </section>
+    );
+  }
+});
+
+/*class AppComponent extends React.Component {
   render() {
+    var controllerUnits = [],
+      imgFigures = [];
     return (
       <section className = "stage">
         <section className="img-sec">
@@ -29,7 +63,7 @@ class AppComponent extends React.Component {
       </section>
     );
   }
-}
+}*/
 
 AppComponent.defaultProps = {};
 
