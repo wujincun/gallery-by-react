@@ -30,6 +30,10 @@ function getDefaultModules() {
         loader: 'style-loader!css-loader!postcss-loader!less-loader'
       },
       {
+        test: /\.json$/,
+        loader: 'json-loader'
+      },
+      {
         test: /\.styl/,
         loader: 'style-loader!css-loader!postcss-loader!stylus-loader'
       },
