@@ -28,8 +28,11 @@ var ImgFigure = React.creatClass({
     )
   }
 });
-var GalleryByReactApp = React.createClass({
-  render:function(){
+
+
+
+class AppComponent extends React.Component {
+  render() {
     var controllerUnits = [],
       imgFigures = [];
     imageDatas.forEach(function (value) {
@@ -38,23 +41,6 @@ var GalleryByReactApp = React.createClass({
     return (
       <section className = "stage">
         <section className="img-sec">
-          {imgFigures}
-        </section>
-        <nav className="controller-nav">
-          {controllerUnits}
-        </nav>
-      </section>
-    );
-  }
-});
-
-/*class AppComponent extends React.Component {
-  render() {
-    var controllerUnits = [],
-      imgFigures = [];
-    return (
-      <section className = "stage">
-        <section className="img-sec">
 
         </section>
         <nav className="controller-nav">
@@ -63,7 +49,7 @@ var GalleryByReactApp = React.createClass({
       </section>
     );
   }
-}*/
+}
 
 AppComponent.defaultProps = {};
 
